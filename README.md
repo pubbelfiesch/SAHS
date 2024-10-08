@@ -34,7 +34,8 @@ My selections:
 - Network Time Protocol (NTP) left at default
 - No SSH key provided at this time
 - nvme0n1 as disk for installing apline
-- entered "sys" as usage mode  
+- entered "sys" as usage mode
+  
 with these steps, you successfully installed alpine linux on your target hardware. Reboot. It will directly start from your your internal storage, and you can remove the installation media.
 
 # Step 2: Essential post-setup instructions
