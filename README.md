@@ -8,7 +8,7 @@ These instructions describe on how to create a simple home server. Features:
 - Backups via a secondary machine outside the local network (to be implemented)
 - Docker environment for services, without crazy network settings
   
-Most of them are ~~stolen~~ inspired from the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This git repository is a backup in case his site is no longer available. 
+Most of them are ~~stolen~~ inspired from the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This git repository extends his work, and backs it up. 
 
 # Step 0: Preconsiderations and architecture
 Main NAS hardware is an HP ProDesk 600 G4 with Intel 8500T, 32GB ram, 260Gb nvme SSD, 1x 12TB Ironwolf HDD  
