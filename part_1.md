@@ -33,8 +33,8 @@ Once the account exists, add them to the administrator user group. In my case th
 ```
 adduser yournamehere -G wheel
 ```
-## Install rights escalaltion software
-Before switching to the new user, we must have a rights escalation tool installed. Debian users will be familiar with sudo. We will use a similar command "doas". This must be installed using the alpine package manager apk and requires that your machine has internet access. If not, check your network settings (dhcp, interfaces,..). Lets start with a general system update check:
+## Install rights elevation software
+Before switching to the new user, we must have a rights elevation tool installed. Debian users will be familiar with sudo. We will use a similar command "doas". This is easiest installed using the alpine package manager apk and requires that your machine has internet access. If not, check your network settings (dhcp, interfaces,..). Lets start with a general system update check:
 ```
 apk update
 apk add --upgrade apk-tools
@@ -81,7 +81,8 @@ For me, i only kept the loopback one and the eth0 (on dhcp).
 # Step 3: Fixed Ip and SSH access
 Until now you probably connected the server hardware to a monitor/TV, and are uncomfortably halfway sitting and standing somewhere. Lets fix that.
 ## Assign fixed ip
-I logged into my router (Fritz!Box), navigated to "heimnetz"->"netwerk", selected the server based on its ip from the list, clicked edit, and assigned a fixed ip (192.167.167.XXX) While you are in your FritzBox interface, make sure to enable 1GB/s speeds under "Netzwerkeinstellungen"->"Lan-Einstellungen". Alternatively, advanced users can set an ip within the linux in /etc/network/interfaces.
+There are two easy ways to accomplish it: Change the configuration within your switch/router to always give the same ip, or change the network discovery mode of the server, e.g. by modifying `/etc/network/interfaces`. I had bad luck with losing my `ìnterfaces`configuration during upgrades, so i will describe only the first approach here:
+Log into your router or switch (in my case it's a Fritz!Box), navigate to "heimnetz"->"netwerk", select the server based on its ip from the list, click edit, and assign a fixed ip (192.167.167.XXX). While you are in your FritzBox interface, make sure to enable 1GB/s speeds under "Netzwerkeinstellungen"->"Lan-Einstellungen".
 ## SSH
 SSH lets you connect remotely to the terminal of the server. on a Windows/macOs/linux device, open a commandline / terminal, and type
 ```
@@ -89,4 +90,4 @@ ssh yourusername@192.168.178.xxx
 ```
 Substitute your created user name, and the assigned ip address. If you skipped the fixed ip address, use "ip a" on the server, and use the displayed local address. Once promted, enter your password. If this worked, you can now put the server in a closet, away from the monitor.
 
-To be continued
+Keep it up, you are doing great :)
