@@ -1,5 +1,15 @@
 This file describes how to set up an alpine linux server from intitial installation, until it can be disconnected from monitor and keyboard, and managed via a network connection.
 
+| Part | Description & Link|
+| ----------- | ----------- |
+| 00 | [Overview and ReadMe](https://github.com/pubbelfiesch/SAHS/) |
+| 01 | [Alpine installation until the server can be remotely managed via SSH](part_1.md) | 
+| 02 | [Setup of local network shares via SMB, permissions, and file transfer from existing HDDs](part_2.md) |
+| 03 | [Setup of a self hosted VPN for remote access to the files, and networking](part_3.md) |
+| 04 | [Installation of Docker, NGINX reverse proxy, IMMICH, and Nextcloud (optional step)](part_4.md) |
+| 05 | [Setup of a secondary machine for off-site backups](part_5.md) |
+| 99 | [Philosophical considerations, and cursed knowledge, reflecting why the nas is build as it is](part_99)
+
 # Step 1: Alpine Installation
 Download the most recent version of [Alpine](https://www.alpinelinux.org/downloads/ "Alpine Linux Download") (3.20.3 at the time of writing). Additionaly, old-school installers will need: a usb stick, LAN connection, monitor, and keyboard. Boot from it on your designated hardware. Follow the instructions from [the alpine installation manual](https://wiki.alpinelinux.org/wiki/Installation). In short, start the process by entering "root" as user in the presented promt, and then type
 ```
