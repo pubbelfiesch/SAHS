@@ -13,7 +13,7 @@ Most of them are ~~stolen~~ inspired from the excellent guide 3.0 of [dither8](h
 
 | Part | Description & Link|
 | ----------- | ----------- |
-| 00 | [Overview and ReadMe](https://github.com/pubbelfiesch/SAHS/tree/main) |
+| 00 | [Overview and ReadMe](https://github.com/pubbelfiesch/SAHS/) |
 | 01 | [Alpine installation until the server can be remotely managed via SSH](part_1.md) | 
 | 02 | [Setup of local network shares via SMB, permissions, and file transfer from existing HDDs](part_2.md) |
 | 03 | [Setup of a self hosted VPN for remote access to the files, and networking](part_3.md) |
