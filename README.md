@@ -7,9 +7,10 @@ This repository contains instructions on how to create a simple home server. Fea
 - Local network shares for Windows, MacOs, Linux, using SMB
 - Backups via a offsite machine outside (to be implemented)
 - Docker environment for services
-- Basic configuration that works, and offers many learning opportunities for those interested
+- Basic configuration that works
+- customizable and many learning opportunities for the interested
   
-Most basic installation instructions are ~~stolen~~ inspired from the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup, and extends it to add docker, and the offsite backup integration.
+The basic installation instructions are ~~stolen~~ inspired by the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup, and adds instructions for advanced docker services, and the offsite backup.
 
 | Part | Description & Link|
 | ----------- | ----------- |
