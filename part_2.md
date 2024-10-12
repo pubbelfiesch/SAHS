@@ -10,7 +10,7 @@ This part explains how to install and setup SMB to create a general purpose shar
 | 05 | [Setup of a secondary machine for off-site backups](part_5.md) |
 | 99 | [Philosophical considerations, and cursed knowledge, reflecting why the nas is build as it is](part_99)
 
-# Step 1: Install Samba and dependencies
+# Step 1: Install Samba and other software packages
 Install the following packages, and their documentation:
 ```
 doas apk update
@@ -99,7 +99,7 @@ To check if this worked, you can use the following commands:
 # Step 3: Creating the root folder structure
 The first layer of folders in the future network share need some additional attention. In the following text, i will call these "main folders", and the zfs dataset folder `/nas/data` will be called the "base folder". If you are planning on re-using a the structure from an existing share or external hard drive, follow the optional subchapter below. If you only plan on re-using the data, feel free to skip the next subchapter, and transfer the files afterwards via the network share.
 
-# Transfer existing folders & files to the future share
+## Transfer existing folders & files to the future share
 Plug your external storage into the server, preferably via SATA or USB3-4. Identify the new storage media via the `lsblk` command. To access the content of the HDD, the relevant partition needs to be mounted to a folder. Start by creating a new empty folder.
 ```
 doas mkdir /media/hddexternal
@@ -123,7 +123,7 @@ doas rsync -a --progress /media/hddexternal /nas/data
 ```
 Depending on your HDD and its content, this might take a while. Personal example: A couple of hundred of GB of pictures (avg 10mb / pic) transfered at an average of 100 MB/s, although i benchmarked both involved HDD at theoretical 280MB/s. Larger files, however, transfered at almost max speed. rsync gives a nice status per file, but lacks an overall status indicator, so make sure to take your time.
 
-# Main folder structure & permissions
+## Main folder structure & permissions
 Create the folderstructure in the main zfs datashare (the future root folder of the network share). In my case, i use
 ```
 doas mkdir -p /nas/data/media
@@ -160,7 +160,7 @@ After saving, check it by typing the following command, which will output the cu
 ```
 hostname
 ```
-# Samba configuration
+## Samba configuration
 Samba was already installed in Part 2 Step 1. However, which folders shall be accessible by whom, is defined in a configuration file. The default file contains many many settings and examples. To keep things simple, we will start with the most simple setup. At first, we backup the default configuration.
 ```
 doas cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
@@ -196,7 +196,7 @@ Remove the entire content. `ctrl + k` removes entire lines at once. Here is my s
 > These settings work for Windows > 7, MacOS, and Linux.
 > Only users within the "nas" group will be able to access the files on the server.
 
-# Autostart samba upon boot
+## Autostart samba upon boot
 Previously, we installed samba. This is the software server that makes the files and folders accessible to the nas user. Make sure that it is automatically started upon server boot.
 ```
 doas rc-update add samba
@@ -210,7 +210,7 @@ to be continued
 > If you have trouble with services not starting up with the server, have a look at this[link to rc-update examples](https://www.cyberciti.biz/faq/how-to-enable-and-start-services-on-alpine-linux/)
 > especially the combination of `rc-service --list | grep -i YourDesiredServiceName` and `doas rc-update add YourDesiredService default` works like a charm for me.
 
-# Samba password and onboarding new nas users
+## Samba password and onboarding new nas users
 Samba recognises the linux server users as possible users of the file share. However, the password for the share must be manually set. Start by setting your own samba password.
 ```
 doas smbpasswd -a YourCurrentUserOrAnotherUserOfTheNas
