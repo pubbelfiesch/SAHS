@@ -23,11 +23,12 @@ man rsync
 ```
 Once confirmed working, press `q`to exit.
   
-Note: In later stages we will modify configuration files of these packages. Should your customizations lead to non-function of a package, you can easily reinstall it with fresh configuration files:
-```
-doas apk remove --purge samba
-doas apk add samba
-```
+> [!Note]
+> In later stages we will modify configuration files of these packages. Should your customizations lead to non-function of a package, you can easily reinstall it with fresh configuration files:
+> ```
+> doas apk remove --purge samba
+> doas apk add samba
+> ```
 
 # Step 2: Setting up your large media storage device
 Until now i only used the 260GB NVME SSD for the Alpine operating system. For my planned usecase i need more storage space, which is why in the following steps i will be configuring a 12TB HDD. If you are just starting out, you can skip this step and only work with the primary storage device.
@@ -63,12 +64,13 @@ nvme0n1     259:0    0 238.5G  0 disk
 ```
 `nvme0n1`can be identified as my primary boot storage with my os on it by the size of it. Similarly, `sda` seems to be the large HDD. `sda1` is our target partition we will further use.
   
-Sidenote: Should your HDD only show the letters without a number at the end, e.g. `sda` instead of `sda1`, then this is an indication that no partition table is present on the disk. This happens if your freshly wiped the disk for using it in a new nas, and did not initialise it since. To fix this potential issue, you can use parted. Be warned, this will delete all data from the HDD:
-```
-doas parted /dev/sda
-mklabel GPT
-```
-Use `q`to quit out of the parted promt. Run `lsblk` again to confirm that the partitions are present like in the sample output above.
+> [!Note]
+> Should your HDD only show the letters without a number at the end, e.g. `sda` instead of `sda1`, then this is an indication that no partition table is present on the disk. This happens if your freshly wiped the disk for using it in a new nas, and did not initialise it since. To fix this potential issue, you can use parted. Be warned, this will delete all data from the HDD:
+> ```
+> doas parted /dev/sda
+> mklabel GPT
+> ```
+> Use `q`to quit out of the parted promt. Run `lsblk` again to confirm that the partitions are present like in the sample output above.
 
 To create the ZFS pool with the name "nas", use 
 ```
@@ -90,4 +92,76 @@ To check if this worked, you can use the following commands:
 - `zpool lost` should list your zpool
 - `cd /nas/data` and `ls` should work and reveal an empty "folder".
 
+# Step 3: Creating the root folder structure
+The first layer of folders in the future network share need some additional attention. In the following text, i will call these "main folders", and the zfs dataset folder `/nas/data` will be called the "base folder". If you are planning on re-using a the structure from an existing share or external hard drive, follow the optional subchapter below. If you only plan on re-using the data, feel free to skip the next subchapter, and transfer the files afterwards via the network share.
+
+# Transfer existing folders & files to the future share
+Plug your external storage into the server, preferably via SATA or USB3-4. Identify the new storage media via the `lsblk` command. To access the content of the HDD, the relevant partition needs to be mounted to a folder. Start by creating a new empty folder.
+```
+doas mkdir /media/hddexternal
+```
+Next, mount the relevant partition to the new folder using:
+```
+doas mount /dev/sde1 /media/hddexternal
+```
+> [!Tip]
+> Check that no error or permission errors appear. If so, make sure to not only mount the disk, i.e. `/dev/sde/`, but the partition `dev/sde1/`. If `lsblk` reports NTFS as file system for your partition, check google for additional command parameters.
+
+Navigate to the new folder to see the content.
+```
+cd /media/hddexternal
+ls
+```
+
+copy the relevant folder(s) to the zfs dataset "base folder". The previously installed tool rsync is perfect for that. In the following example, we transfer the entire content of the mounted partition. Take note of no trailing "/", otherwise the content will appear in a new subfolder `/nas/data/hddextern` instead of `/nas/data/`
+```
+doas rsync -a --progress /media/hddexternal /nas/data
+```
+Depending on your HDD and its content, this might take a while. Personal example: A couple of hundred of GB of pictures (avg 10mb / pic) transfered at an average of 100 MB/s, although i benchmarked both involved HDD at theoretical 280MB/s. Larger files, however, transfered at almost max speed. rsync gives a nice status per file, but lacks an overall status indicator, so make sure to take your time.
+
+# Main folder structure & permissions
+Create the folderstructure in the main zfs datashare (the future root folder of the network share). In my case, i use
+```
+doas mkdir -p /nas/data/media
+doas mkdir -p /nas/data/ingest
+doas mkdir -p /nas/data/homes
+doas mkdir -p /nas/data/programdata
+```
+`media` will be used for photo backup from cameras, automatic sync from smartphones, audiobooks, ebooks, etc... The `ingest` folder will be the chaotic box of folders that you tell yourself one day will be sorted into other folders. `homes` will contain personal folders for nas users. We do not need to generate any of these intended subfolders at this time.
+
+It is important to set the permissions of the base folder. First, lets look at the base folder
+```
+doas chown root:root /nas/data
+doas chmod 755 /nas/data
+```
+The main folders need to be accessed by the nas users. Therfore, each time a new main folder is introduced to the base folder, make sure to run the following commands:
+```
+doas chgrp -R nas /nas/data/*
+doas chmod -R 770 /nas/data/*
+```
+The first command recursivly sets the group on all sub-folders of `/nas/data`, that's what the capital -R options does. And the asterisk *, is a wildcard which pattern matches. In this case: anything after `/nas/data`. Second command changes the scope of those permissions to give owner and group (`root` and `nas` respectivly) full access but anyone else no permission. Check the permissions using
+```
+ls /nas/data/ -l
+```
+Advanced users can check [the documentation of permissions](http://linuxcommand.org/lc3_lts0090.php) to create customized structures and persmission.
+
+# Step 3: Make the files accessible via local network
+# Check the hostname
+Future users of the nas will be able to automatically discover the server in the network tab of their local machine. The name displayed to them is dependent on the hostname of the server. To change the hostname, edit `/etc/hostname` and change the name. Make sure that its a fully qualified hostname, ending in a top-level domain. In my case, i chose `mynas.local`.
+```
+doas nano /etc/hostname
+```
+After saving, check it by typing the following command, which will output the current hostname.
+```
+hostname
+```
+# Autostart samba upon boot
+Previously, we installed samba. This is the software server that makes the files and folders accessible to the nas user. Make sure that it is automatically started upon server boot.
+```
+doas rc-update add samba
+doas rc-service samba start
+```
+
 to be continued
+
+
