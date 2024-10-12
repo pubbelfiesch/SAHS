@@ -56,7 +56,7 @@ Next, install doas. Additionally, install a text editor of your choice. I will b
 ```
 apk add doas nano
 ```
-Doas needs some setup. Edit the following configuration 
+Doas needs some setup. Use the freshly installed text editor nano to edit the configuration.
 ```
 nano /etc/doas.d/doas.conf
 ```
@@ -64,7 +64,8 @@ check that the line of text included lists your administrative usergroup. It sho
 ```
 permit persist :wheel
 ```
-Logout using the exit command, or reboot. Login using your previously set up user. Check if doas is working, e.g.
+To save the file, use the key combination `ctrl + s`, then `ctrl + x` to exit.  
+Now lets change users. Logout using the `exit` command, or reboot. Login using your previously set up user. Check if doas is working, e.g.
 ```
 doas apk update
 ```
