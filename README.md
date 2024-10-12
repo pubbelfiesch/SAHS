@@ -9,7 +9,7 @@ This repository contains instructions on how to create a simple home server. Fea
 - Docker environment for services
 - Basic configuration that works, and offers many learning opportunities for those interested
   
-Most of them are ~~stolen~~ inspired from the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup, and documents the changes specific to my setup and use-case.
+Most basic installation instructions are ~~stolen~~ inspired from the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup, and extends it to add docker, and the offsite backup integration.
 
 | Part | Description & Link|
 | ----------- | ----------- |
