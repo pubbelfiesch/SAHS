@@ -14,14 +14,18 @@ This part explains how to install and setup SMB to create a general purpose shar
 Install the following packages, and their documentation:
 ```
 doas apk update
-doas apk add mandoc man-pages tmux samba rsync parted lsblk avahi dbus sipcalc ncurses-terminfo
+doas apk add mandoc man-pages tmux samba rsync parted lsblk dbus sipcalc ncurses-terminfo wsdd
 doas apk add doas-doc nano-doc tmux-doc samba-doc rsync-doc parted-doc util-linux-doc avahi-doc dbus-doc sipcalc-doc
 ```
-Should you have highly specific with a customized command of one of these packages, the documentation might be more helpful than a google search. These `man`pages can be used as follows:
-```
-man rsync
-```
-Once confirmed working, press `q`to exit.
+> [!Note]
+> We are installing a lot of packages here that will be used throughout the instructions.
+> man-pages are used to display package help pages directly on the server. For customized commands with specific parameters, man pages are very helpful. To use them, type `man rsync` or a package name of your choice, and navigate a bit. Press `q`to quit.
+> `tmux` allows to have a time indifferent ssh session. For time consuming commands, the ssh window can be closed and resumed without loosing the progress, history,..
+> `samba` is the service to provide the files via network to the nas users.
+> `rsync` copies files from A to B in a secure way. even if a large file transfer breaks mitpoint, rsync can resume where it left off.
+> `parted` is used for managing, writing, and wiping, disks and partitions
+> `lsblk` lists the current storage devices, partitions, formatings, etc
+>  `wsdd` makes your server discoverable in the local network
   
 > [!Note]
 > In later stages we will modify configuration files of these packages. Should your customizations lead to non-function of a package, you can easily reinstall it with fresh configuration files:
@@ -44,7 +48,7 @@ To not manually start the service after each boot, confingure your server to sta
 doas rc-update add zfs-import sysinit
 doas rc-update add zfs-mount sysinit
 ```
-==Reboot==
+Reboot!
 
 Now we need to identify the disk(s) that we will group into a ZFS pool. We will use `lsblk`, which we previously installed.
 ```
