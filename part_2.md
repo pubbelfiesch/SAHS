@@ -37,7 +37,7 @@ doas apk add doas-doc nano-doc tmux-doc samba-doc rsync-doc parted-doc util-linu
 # Step 2: Setting up your large media storage device
 Until now i only used the 260GB NVME SSD for the Alpine operating system. For my planned usecase i need more storage space, which is why in the following steps i will be configuring a 12TB HDD. If you are just starting out, you can skip this step and only work with the primary storage device.
   
-I want to use a 12TB HDD for with ZFS in a single disk configuration. This is not ideal, and a dedicated chapter is provided in [part_0.md](part_0.md). The remaining steps of this tutorial are agnostic to the exact specification of your storage setup, so feel free to substitute your own.
+I want to use a 12TB HDD for with ZFS in a single disk configuration. This is not ideal, and a dedicated chapter is provided in [part_99.md](part_99.md). The remaining steps of this tutorial are independent to the exact specification of your storage setup, so feel free to substitute your own.
   
 Start by installing ZFS
 ```
