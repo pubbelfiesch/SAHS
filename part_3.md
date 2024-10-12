@@ -50,3 +50,34 @@ On a second device within your local network (or tailscale network), type the ip
 https://192.168.178.XXX:9443/timeout.html#!/2/docker/dashboard
 ```
 Upon your first visit to the site you will be asked to set your portainer administrator username and password. Next, click on the "new environment" option, and then click on the only option presented to you.
+
+# Install nginx proxy manager
+We could expose the server to the internet and map ports to specific services. I prefere to have a dedicated url/domain name i can type into the address bars of browsers and apps, i.e. `photos.pubbelfiesch.com` instead of `244.183.221.055:2283`. This is achieved with a reverse proxy manager. Lets install it in the portainer web user interface.  
+Login to your local portainer web instance, and add a "stack". Copy paste the following text into the presented field.
+```
+version: '3.8'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+```
+Make sure to name it, otherwise portainer will not let you create the service. On the bottom of the page, click "deploy stack", and wait a bit. Once automatically redirected to the `stacks` overview page, you can now access nginx-proxy-manager via the webui on your servers ip:
+```
+http://192.168.178.XXX:81/login
+```
+The credential for the first login are 
+```
+admin@example.com
+changeme
+```
+Upon first login, you will be asked to change the username and password. 
+A complete guide on how to setup the local dns resolver etc can be found [here](https://www.youtube.com/watch?v=qlcVx-k-02E&t=456s).
+
+
