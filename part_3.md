@@ -52,7 +52,7 @@ https://192.168.178.XXX:9443/timeout.html#!/2/docker/dashboard
 Upon your first visit to the site you will be asked to set your portainer administrator username and password. Next, click on the "new environment" option, and then click on the only option presented to you.
 
 # Install nginx proxy manager
-We could expose the server to the internet and map ports to specific services. I prefere to have a dedicated url/domain name i can type into the address bars of browsers and apps, i.e. `photos.pubbelfiesch.com` instead of `244.183.221.055:2283`. This is achieved with a reverse proxy manager. Lets install it in the portainer web user interface.  
+We could expose the server to the internet and map ports to specific services. I prefere to have a dedicated url/domain name i can type into the address bars of browsers and apps, i.e. `photos.pubbelfiesch.com` instead of `244.183.221.055:2283`. This is achieved with a reverse proxy manager. An additional benefit is using HTTPS for basically every service, so that these can securely be accessed even in non-secired wifis. Lets install it in the portainer web user interface.  
 Login to your local portainer web instance, and add a "stack". Copy paste the following text into the presented field.
 ```
 version: '3.8'
