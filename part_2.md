@@ -146,6 +146,7 @@ ls /nas/data/ -l
 Advanced users can check [the documentation of permissions](http://linuxcommand.org/lc3_lts0090.php) to create customized structures and persmission.
 
 # Step 3: Make the files accessible via local network
+This steps explains how to setup samba, the smb share.
 # Check the hostname
 Future users of the nas will be able to automatically discover the server in the network tab of their local machine. The name displayed to them is dependent on the hostname of the server. To change the hostname, edit `/etc/hostname` and change the name. Make sure that its a fully qualified hostname, ending in a top-level domain. In my case, i chose `mynas.local`.
 ```
@@ -155,13 +156,71 @@ After saving, check it by typing the following command, which will output the cu
 ```
 hostname
 ```
+# Samba configuration
+Samba was already installed in Part 2 Step 1. However, which folders shall be accessible by whom, is defined in a configuration file. The default file contains many many settings and examples. To keep things simple, we will start with the most simple setup. At first, we backup the default configuration.
+```
+doas cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+```
+Open the `smb.conf` in a text editor.
+```
+doas nano /etc/samba/smb.conf
+```
+Remove the entire content. `ctrl + k` removes entire lines at once. Here is my sample configuration content.
+```
+#======================= Global Settings =====================================
+[global]
+
+   workgroup = WORKGROUP
+   server role = standalone server
+   force group = nas
+   inherit permissions = yes
+   force create mode = 0750
+   force directory mode = 0770
+   client min protocol = SMB3
+   map to guest = Bad User
+
+#============================ Share Definitions ==============================
+
+[Share]
+    comment = Files shared with all nas users
+    path = /nas/data
+    valid users = @nas
+    guest ok = no
+    read only = no
+```
+> [!Note]
+> These settings work for Windows > 7, MacOS, and Linux.
+> Only users within the "nas" group will be able to access the files on the server.
+
 # Autostart samba upon boot
 Previously, we installed samba. This is the software server that makes the files and folders accessible to the nas user. Make sure that it is automatically started upon server boot.
 ```
 doas rc-update add samba
 doas rc-service samba start
+doas rc-update add wsddn
+```
+wsddn is an additional service we previouly installed to see the server in the windows network overview. 
+to be continued
+  
+> [!Tip]
+> If you have trouble with services not starting up with the server, have a look at this[link to rc-update examples](https://www.cyberciti.biz/faq/how-to-enable-and-start-services-on-alpine-linux/)
+> especially the combination of `rc-service --list | grep -i YourDesiredServiceName` and `doas rc-update add YourDesiredService default` works like a charm for me.
+
+# Samba password and onboarding new nas users
+Samba recognises the linux server users as possible users of the file share. However, the password for the share must be manually set. Start by setting your own samba password.
+```
+doas smbpasswd -a YourCurrentUserOrAnotherUserOfTheNas
+```
+For adding other users to the nas, execute the following commands:
+```
+doas adduser NewUserNameOfYourChoosing
+doas adduser NewUserNameOfyourChoosing nas
+doas smbpasswd -a NewUserNameOfYourChoosing
 ```
 
-to be continued
-
-
+# Troubleshooting
+Congratulations, you should now be able to see the server in Windows Explorer Network, or in the MacOs Finder Network. If not, check the following things:
+- Try to manually connect to the server from your windows/macos/linux machine. Windows users can type into the explorer file address the ip of the server with two backslashs, e.g. `\\192.168.178.xxx`. MacOs users can "connect to server" and type `smb://192.168.178.xxx`.
+- Check that each user of the nas has a serverside linux AND a samba password set.
+- Check that samba boots when the server boots (see rc-update example above)
+- Check that the samba configuration is correct
