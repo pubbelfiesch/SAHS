@@ -21,3 +21,7 @@ The basic installation instructions are ~~stolen~~ inspired by the excellent gui
 | 04 | [Installation of Docker, NGINX reverse proxy, IMMICH, and Nextcloud (optional step)](part_4.md) |
 | 05 | [Setup of a secondary machine for off-site backups](part_5.md) |
 | 99 | [Philosophical considerations, and cursed knowledge, reflecting why the nas is build as it is](part_99)
+
+# Status
+
+This repository is currently being gradually build up. Part 1 and 2 are considered technically complete. Use at your own risk.
