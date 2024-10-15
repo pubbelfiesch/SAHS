@@ -10,7 +10,7 @@ This repository contains instructions on how to create a simple home server. Fea
 - Basic configuration that works
 - customizable and many learning opportunities for the interested
   
-The basic installation instructions are ~~stolen~~ inspired by the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup, and adds instructions for advanced docker services, and the offsite backup.
+The basic installation instructions are ~~stolen~~ inspired by the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup of his instructions, and extends them with advanced docker services, and offsite backup.
 
 | Part | Description & Link|
 | ----------- | ----------- |
