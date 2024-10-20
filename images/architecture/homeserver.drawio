@@ -1,0 +1,175 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:131.0) Gecko/20100101 Firefox/131.0" version="24.8.0">
+  <diagram name="Seite-1" id="N_F27kUCI5YYLXnddwdG">
+    <mxGraphModel dx="1221" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lf8BdMNQpt488W7-9pi6-3" value="Network &lt;br&gt;&quot;Default&quot;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-4" value="- GC-Nat / &quot;DS-Lite&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-3">
+          <mxGeometry y="30" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-5" value="- Modem + Router" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-3">
+          <mxGeometry y="60" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-7" value="Homeserver users" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="335" y="270" width="140" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-8" value="-&amp;nbsp; Android (Galaxy/Pixel)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-7">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-9" value="&lt;div&gt;-&amp;nbsp; Windows&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-7">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-65" value="-&amp;nbsp; MacOS (Intel + M1)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-7">
+          <mxGeometry y="90" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-15" value="Network &lt;br&gt;&quot;OFFSITE Backup&quot;" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="150" width="140" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-16" value="GC-Nat / &quot;DS-Lite&quot;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-15">
+          <mxGeometry y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-17" value="Modem + Router" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-15">
+          <mxGeometry y="60" width="140" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="lf8BdMNQpt488W7-9pi6-25" target="lf8BdMNQpt488W7-9pi6-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-25" value="Alpine Server / Homelab / NAS" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="40" y="290" width="270" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-23" value="&lt;div&gt;ZFS Pool&lt;/div&gt;&lt;div&gt;&quot;nas&quot;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="140" y="30" width="120" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-26" value="Network Share via SAMBA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="10" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-28" value="VPN access via Tailscale" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="10" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-48" value="Additional Services via Docker" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="10" y="230" width="240" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-49" value="&lt;div&gt;Docker management via &lt;a href=&quot;https://docs.portainer.io/start/install-ce/server/docker/linux&quot;&gt;Portainer&lt;/a&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="30" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-50" value="&lt;div&gt;Reverse Proxy via &lt;a href=&quot;https://nginxproxymanager.com/guide/#quick-setup&quot;&gt;NGINX proxy manager&lt;/a&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="60" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-64" value="File Synchronisation via TBD Nextcloud?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="90" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-51" value="&lt;div&gt;Calendar and Contacts via &lt;a href=&quot;https://sabre.io/baikal/docker-install/&quot;&gt;Baikal&lt;/a&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="120" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-59" value="Passwordmanager via &lt;a href=&quot;https://github.com/dani-garcia/vaultwarden&quot;&gt;Vaultwarden&lt;/a&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="150" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-60" value="Photo Sync via &lt;a href=&quot;https://immich.app/docs/install/docker-compose/&quot;&gt;Immich&lt;/a&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="180" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-61" value="Notes via &lt;a href=&quot;https://github.com/laurent22/joplin&quot;&gt;Joplin&lt;/a&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-48">
+          <mxGeometry y="210" width="240" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-78" value="ZFS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="10" y="30" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-80" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.hard_disk;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="180" y="150" width="40" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-83" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/folder-network-128.png" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="100" y="110" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-84" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.vpn;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="100" y="184" width="20" height="20.57" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-100" value="" style="image;html=1;image=img/lib/clip_art/networking/Print_Server_128x128.png" vertex="1" parent="lf8BdMNQpt488W7-9pi6-25">
+          <mxGeometry x="-5" y="-14" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-30" value="Internet" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="740" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-47" value="&lt;div&gt;Registered Domain, AAAA to tailscale ipv6, CNAME from subdomains to domain &lt;br&gt;&lt;/div&gt;&lt;div&gt;SSL Certificate via Let&#39;s encrypt and DNS-Challenge&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-30">
+          <mxGeometry x="70" y="30" width="670" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-53" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_cloud.svg;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-30">
+          <mxGeometry x="10" y="30" width="50" height="31.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-54" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_cloud.svg;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-30">
+          <mxGeometry x="670" y="30" width="50" height="31.5" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-55" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_2;fillColor=#D2D3D3;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="85.25" y="106.38" width="49.5" height="33.62" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-56" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.internet_2;fillColor=#D2D3D3;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="635.25" y="106.38" width="49.5" height="33.62" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classicThin;startFill=1;" edge="1" parent="1" source="lf8BdMNQpt488W7-9pi6-62" target="lf8BdMNQpt488W7-9pi6-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;startArrow=classicThin;startFill=1;" edge="1" parent="1" source="lf8BdMNQpt488W7-9pi6-62" target="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-62" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.vpn;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="1">
+          <mxGeometry x="370" y="140" width="70" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.472;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=default;startArrow=classicThin;startFill=1;" edge="1" parent="1" source="lf8BdMNQpt488W7-9pi6-25" target="lf8BdMNQpt488W7-9pi6-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classicThin;startFill=1;" edge="1" parent="1" source="lf8BdMNQpt488W7-9pi6-66" target="lf8BdMNQpt488W7-9pi6-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-66" value="Alpine Backup server / Backup NAS" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="510" y="290" width="270" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-85" value="&lt;div&gt;ZFS Pool&lt;/div&gt;&lt;div&gt;&quot;nas-backup&quot;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="10" y="30.94999999999999" width="120" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-86" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.devices.hard_disk;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="50" y="146.38" width="40" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-89" value="ZFS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="140" y="30.94999999999999" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-90" value="Network Share via SAMBA" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="140" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-91" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn1.iconfinder.com/data/icons/unicons-line-vol-3/24/folder-network-128.png" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="230" y="110" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-92" value="VPN access via Tailscale" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="140" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-93" value="" style="html=1;strokeWidth=1;shadow=0;dashed=0;shape=mxgraph.ios7.misc.vpn;fillColor=#007AFF;strokeColor=none;buttonText=;strokeColor2=#222222;fontColor=#222222;fontSize=8;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="230" y="184" width="20" height="20.57" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-101" value="" style="image;html=1;image=img/lib/clip_art/networking/Print_Server_128x128.png" vertex="1" parent="lf8BdMNQpt488W7-9pi6-66">
+          <mxGeometry x="-20" y="-10" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-79" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/security/Router_VPN.svg;" vertex="1" parent="1">
+          <mxGeometry x="37" y="145.2" width="55.800000000000004" height="39.6" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-81" value="" style="image;sketch=0;html=1;points=[];align=center;fontSize=12;image=img/lib/mscae/Docker.svg;" vertex="1" parent="1">
+          <mxGeometry x="248" y="519" width="50" height="39.29" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-98" value="" style="shape=flexArrow;endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="340" y="430" as="sourcePoint" />
+            <mxPoint x="490" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-102" value="" style="image;points=[];aspect=fixed;html=1;align=center;shadow=0;dashed=0;image=img/lib/allied_telesis/computer_and_terminals/Smartphone.svg;" vertex="1" parent="1">
+          <mxGeometry x="337" y="303.82" width="9.8" height="21.38" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-103" value="" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/windows_server_2.svg;" vertex="1" parent="1">
+          <mxGeometry x="337" y="335" width="15" height="18.75" as="geometry" />
+        </mxCell>
+        <mxCell id="lf8BdMNQpt488W7-9pi6-104" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.apple;fillColor=#1B1C1C;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="336" y="367" width="16" height="16" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
