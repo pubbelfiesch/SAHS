@@ -33,5 +33,5 @@ This repository is currently being gradually build up. Part 1 and 2 are consider
 ## Open topics:
 - Implement Backup strategy, Project "No, there is another"
 - Test backup strategy, Projekt "The Clone Wars"
-- Find service to synchronise files between 4-5 devices without corruption, Projekt "Dont fall for the dark side *nextcloud*"
+- Find service to synchronise files between 4-5 devices without corruption, Projekt "You were the chose one *nextcloud*"
 - update documentation, Project "Perhabs the archives are incomplete"
