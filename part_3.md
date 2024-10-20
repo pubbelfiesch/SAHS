@@ -1,5 +1,16 @@
 This part explains how install docker and associated services for your homeserver. All theses steps are optional, so if you dont want to install any of these and just use the shared network folder, skip this.
 
+# Overview
+| Part | Description & Link|
+| ----------- | ----------- |
+| 00 | [Overview and ReadMe](https://github.com/pubbelfiesch/SAHS/) |
+| 01 | [Alpine installation until the server can be remotely managed via SSH](part_1.md) | 
+| 02 | [Setup of local network shares via SMB, permissions, and file transfer from existing HDDs](part_2.md) |
+| 03 | [Optional: Setup of docker, a reverse proxy, and a local domain](part_3.md) |
+| 04 | [Installation and setup of a VPN, Tailscale, for external access](part_4.md) |
+| 05 | [Setup of a secondary machine for off-site backups](part_5.md) |
+| 99 | [Philosophical considerations, and cursed knowledge, reflecting why the nas is build as it is](part_99)
+
 # Step 1: Install docker
 Docker is the software that will host other applications on the NAS. Why not installing them bare-metal? Because of dependencies. One slight change, e.g. via update or misconfiguration, might bring the entire homeserver down. So instead, we will be using docker containsers, which encapsulates certain aspects of a software environment into a nice, individual packages.   
 Docker will allow us to install services for e.g.
