@@ -28,7 +28,6 @@ The basic installation instructions are ~~stolen~~ inspired by the excellent gui
 ![NAS architecture overview](/images/architecture/homeserver_architecture.drawio.svg)
 
 # Status
-
 This repository is currently being gradually build up. Part 1 and 2 are considered technically complete. Use at your own risk.
 ## Open topics:
 - Implement Backup strategy, Project "No, there is another"
