@@ -2,6 +2,7 @@
 Simple Alpine based home server, a.k.a DIY NAS
 
 # Overview
+## Features & Inspiration
 This repository contains instructions on how to create a simple home server. Features:
 - Lightweight & responsive linux basis (Alpine Distro)
 - Local network shares for Windows, MacOs, Linux, using SMB
@@ -12,6 +13,7 @@ This repository contains instructions on how to create a simple home server. Fea
   
 The basic installation instructions are ~~stolen~~ inspired by the excellent guide 3.0 of [dither8](https://dither8.xyz/guide/alpine-linux-nas-3/ "Link to dither8's website"). This repository is meant as a backup of his instructions, and extends them with advanced docker services, and offsite backup.
 
+## Quick links
 | Part | Description & Link|
 | ----------- | ----------- |
 | 00 | [Overview and ReadMe](https://github.com/pubbelfiesch/SAHS/) |
@@ -22,6 +24,14 @@ The basic installation instructions are ~~stolen~~ inspired by the excellent gui
 | 05 | [Setup of a secondary machine for off-site backups](part_5.md) |
 | 99 | [Philosophical considerations, and cursed knowledge, reflecting why the nas is build as it is](part_99)
 
+## Architecture
+![NAS architecture overview](/images/architecture/homeserver_architecture.drawio.svg)
+
 # Status
 
 This repository is currently being gradually build up. Part 1 and 2 are considered technically complete. Use at your own risk.
+## Open topics:
+- Implement Backup strategy, Project "No, there is another"
+- Test backup strategy, Projekt "The Clone Wars"
+- Find service to synchronise files between 4-5 devices without corruption, Projekt "Dont fall for the dark side *nextcloud*"
+- update documentation, Project "Perhabs the archives are incomplete"
