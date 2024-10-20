@@ -1,3 +1,17 @@
+The files and services on the server are currently only accessible via local network. If you need data on the go via internet, you can chose to make your server accessible via internet. However, in this tutorial, we will only use a VPN. This tunnel allows specific devices with specific software to access the data without exposing the data to security risks.
+
+# Overview
+| Part | Description & Link|
+| ----------- | ----------- |
+| 00 | [Overview and ReadMe](https://github.com/pubbelfiesch/SAHS/) |
+| 01 | [Alpine installation until the server can be remotely managed via SSH](part_1.md) | 
+| 02 | [Setup of local network shares via SMB, permissions, and file transfer from existing HDDs](part_2.md) |
+| 03 | [Optional: Setup of docker, a reverse proxy, and a local domain](part_3.md) |
+| 04 | [Installation and setup of a VPN, Tailscale, for external access](part_4.md) |
+| 05 | [Setup of a secondary machine for off-site backups](part_5.md) |
+| 99 | [Philosophical considerations, and cursed knowledge, reflecting why the nas is build as it is](part_99)
+
+
 # Step 1: Install tailscale
 ## Install on another device
 Tailscale is a free-for-personal use tunnel software, which has a nice user-interface and user-experience. Lets make use of that by first installing tailscale on a device that has more than a command line interface :) I chose my laptop. Visit [tailscale.com](https://tailscale.com/) and download the installer for your plattform. Login with a method of your choice.
