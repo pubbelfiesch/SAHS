@@ -35,3 +35,6 @@ This repository is currently being gradually build up. Part 1 and 2 are consider
 - Test backup strategy, Projekt "The Clone Wars"
 - Find service to synchronise files between 4-5 devices without corruption, Projekt "You were the chose one *nextcloud*"
 - update documentation, Project "Perhabs the archives are incomplete"
+- Implement basic server with simple permissions, Project "A new hope", Completed, Documented
+- Install services as required, Projekt "Gonk Droids", Completed, not documented
+- Install VPN , configure Domain, configure reverse proxy, Project "This is the way", completed, not documented
