@@ -42,7 +42,7 @@ I want to use a 12TB HDD for with ZFS in a single disk configuration. This is no
   
 Start by installing ZFS
 ```
-doas apk install linux-lts zfs zfs-lts zfs-doc
+doas apk add linux-lts zfs zfs-lts zfs-doc
 ```
 To not manually start the service after each boot, confingure your server to start zfs at system initialisation.
 ```
